@@ -1,0 +1,14 @@
+<div class="prototype">
+  <%# 画像がある場合は表示する %>
+  <% if prototype.image.attached? %>
+    <%= link_to image_tag(prototype.image), prototype_path(prototype) %>
+  <% else %>
+    <p>No Image Available</p>
+  <% end %>
+
+  <h2><%= link_to prototype.title, prototype_path(prototype) %></h2> <!-- プロトタイプ名を表示 -->
+
+  <p><%= prototype.catch_copy %></p> <!-- キャッチコピーを表示 -->
+
+  <p>投稿者: <%= prototype.user.name %></p> <!-- 投稿者の名前を表示 -->
+</div>
