@@ -11,14 +11,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.text   :occupation,         null: false
       t.text   :position,           null: false
 
-      add_column :prototypes, :name, :string
-      add_column :prototypes, :catch_copy, :string
-      add_column :prototypes, :concept, :string
-      add_column :comments, :content, :text
-
-      add_reference :prototypes, :user, foreign_key: true
-      add_reference :comments, :user, foreign_key: true
-      add_reference :comments, :prototype, foreign_key: true
+      
+      
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
