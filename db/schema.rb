@@ -55,7 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_17_091204) do
     t.string "title"
     t.string "catch_copy"
     t.string "concept"
-    t.integer "user_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_prototypes_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -78,4 +79,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_17_091204) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "prototypes"
   add_foreign_key "comments", "users"
+  add_foreign_key "prototypes", "users"
 end
