@@ -10,6 +10,6 @@
 <p class="card__summary">
   <%= prototype.catch_copy %> <!-- キャッチコピーを表示 -->
 </p>
-  <%= link_to "by prototype.user.name", root_path, class: :card__user %>
+  <%= link_to prototype.user.name, user_path(prototype.user), class: :card__user %>
   </div>
 </div>
