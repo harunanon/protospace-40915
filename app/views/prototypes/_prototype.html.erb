@@ -1,14 +1,15 @@
-<div class="prototype">
+<div class="card">
   <%# 画像がある場合は表示する %>
   <% if prototype.image.attached? %>
-    <%= link_to image_tag(prototype.image), prototype_path(prototype) %>
+    <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype) %>
   <% else %>
     <p>No Image Available</p>
   <% end %>
-
-  <h2><%= link_to prototype.title, prototype_path(prototype) %></h2> <!-- プロトタイプ名を表示 -->
-
-  <p><%= prototype.catch_copy %></p> <!-- キャッチコピーを表示 -->
-
-  <p>投稿者: <%= prototype.user.name %></p> <!-- 投稿者の名前を表示 -->
+ <div class="card__body">
+ <%= link_to prototype.title, prototype_path(prototype),class: :card__titl %><!-- プロトタイプ名を表示 -->
+<p class="card__summary">
+  <%= prototype.catch_copy %> <!-- キャッチコピーを表示 -->
+</p>
+  <%= link_to "by prototype.user.name", root_path, class: :card__user %>
+  </div>
 </div>
